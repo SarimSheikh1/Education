@@ -1,0 +1,149 @@
+:root {
+  --bg: #0b1015;
+  --panel: #121821;
+  --ink: #e7ecf3;
+  --muted: #9aa6b2;
+  --accent: #4b8bff;
+  --accent-2: #29c58f;
+  --warn: #ffb020;
+  --danger: #ff5d5d;
+  --ok: #65b7ff;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #0b1015 0%, #0e141c 100%);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+.app-header, .app-footer {
+  padding: 16px 20px;
+  background: #0d131b;
+  border-bottom: 1px solid #1a2230;
+}
+.app-footer { border-top: 1px solid #1a2230; border-bottom: none; margin-top: auto; }
+
+h1 { font-size: 20px; margin: 0 0 8px; }
+h2 { margin: 0 0 4px; }
+h3 { margin: 0 0 8px; }
+.big { font-size: 22px; margin: 0; }
+.small { font-size: 13px; }
+.muted { color: var(--muted); }
+.hidden { display: none !important; }
+
+.tabs { display: flex; gap: 8px; }
+.tab-btn {
+  background: #121821; color: var(--ink);
+  border: 1px solid #1c2635; border-radius: 999px;
+  padding: 8px 12px; cursor: pointer;
+}
+.tab-btn.active { background: var(--accent); border-color: transparent; color: white; }
+
+#view { padding: 16px 20px; }
+.tab { display: none; }
+.tab.is-active { display: block; }
+
+.section-head { margin: 6px 0 16px; }
+.grid {
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.flex-row { display: flex; align-items: stretch; }
+.flex-1 { flex: 1; }
+.gap { gap: 12px; }
+
+.panel {
+  background: var(--panel); border: 1px solid #1a2230;
+  border-radius: var(--radius); padding: 14px;
+}
+
+.card {
+  border-radius: var(--radius);
+  border: 1px solid #1a2230;
+  background: #0f1520;
+  padding: 14px;
+}
+.card h3 { margin: 0 0 8px; }
+.card .muted { margin: 4px 0 0; }
+
+.btn {
+  background: #1b2432; color: var(--ink);
+  border: 1px solid #2b384e; border-radius: 10px;
+  padding: 8px 12px; cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.success { background: var(--accent-2); color: #06120d; border: none; }
+.btn.warn { background: var(--warn); color: #271b00; border: none; }
+.btn.danger { background: var(--danger); color: #240a0a; border: none; }
+.btn.ok { background: var(--ok); color: #081426; border: none; }
+
+.list { margin: 0; padding-left: 18px; }
+.stack { display: grid; gap: 6px; margin: 8px 0; }
+input { background: #0f1520; color: var(--ink); border: 1px solid #243044; border-radius: 8px; padding: 8px; }
+
+.flashcard {
+  margin-top: 8px;
+  border: 1px solid #28384e; border-radius: 14px;
+  min-height: 160px; display: grid; place-items: center;
+  padding: 18px; text-align: center;
+}
+.flashcard .face { font-size: 26px; }
+.fc-actions { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+#grade-row { display: flex; gap: 8px; }
+
+.quiz-q { font-size: 20px; margin: 8px 0 12px; }
+.quiz-choices { display: grid; gap: 8px; }
+.quiz-choices .choice { text-align: left; }
+.quiz-choices .choice.correct { outline: 2px solid var(--accent-2); }
+.quiz-choices .choice.wrong { outline: 2px solid var(--danger); }
+
+a, a:visited { color: var(--ok); }
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --ink: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --accent-2: #14b8a6;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --ok: #38bdf8;
+  --radius: 12px;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: var(--ink);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform 0.15s ease;
+}
+.panel:hover { transform: translateY(-2px); }
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn { background: var(--accent); color: white; }
+.btn.success { background: var(--accent-2); }
+.btn.warn { background: var(--warn); color: black; }
+.btn.danger { background: var(--danger); }
+.btn.ok { background: var(--ok); color: black; }
