@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LingoSpark — Micro-courses & Flashcards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>LingoSpark</h1>
+    <nav class="tabs">
+      <button class="tab-btn" data-tab="courses">Courses</button>
+      <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+      <button class="tab-btn" data-tab="quiz">Quiz</button>
+      <button class="tab-btn" data-tab="profile">Profile</button>
+    </nav>
+  </header>
+
+  <main id="view">
+    <!-- Courses -->
+    <section id="tab-courses" class="tab is-active">
+      <div class="section-head">
+        <h2>Courses</h2>
+        <p class="muted">Quick lessons with phrases and vocabulary.</p>
+      </div>
+      <div id="course-list" class="grid"></div>
+      <article id="lesson" class="panel hidden"></article>
+    </section>
+
+    <!-- Flashcards -->
+    <section id="tab-flashcards" class="tab">
+      <div class="section-head">
+        <h2>Flashcards</h2>
+        <p class="muted">Due cards are scheduled with spaced repetition.</p>
+      </div>
+      <div class="flex-row gap">
+        <div class="panel flex-1" id="flashcard-panel">
+          <div id="fc-stats" class="muted small"></div>
+          <div id="flashcard" class="flashcard">
+            <div id="flashcard-front" class="face"></div>
+            <div id="flashcard-back" class="face hidden"></div>
+          </div>
+          <div class="fc-actions">
+            <button id="btn-show" class="btn">Show answer</button>
+            <div id="grade-row" class="hidden">
+              <button class="btn danger" data-grade="2">Again</button>
+              <button class="btn warn" data-grade="3">Hard</button>
+              <button class="btn ok" data-grade="4">Good</button>
+              <button class="btn success" data-grade="5">Easy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="add-card-panel">
+          <h3>Add custom card</h3>
+          <label class="stack">
+            <span>Front (target language)</span>
+            <input id="new-front" placeholder="Hola" />
+          </label>
+          <label class="stack">
+            <span>Back (your language)</span>
+            <input id="new-back" placeholder="Hello" />
+          </label>
+          <button id="btn-add-card" class="btn">Add to deck</button>
+          <p class="muted small" id="add-card-msg"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="tab-quiz" class="tab">
+      <div class="section-head">
+        <h2>Quiz</h2>
+        <p class="muted">10 quick questions from the course vocabulary.</p>
+      </div>
+      <div class="panel" id="quiz-panel">
+        <div id="quiz-status" class="muted small"></div>
+        <div id="quiz-question" class="quiz-q"></div>
+        <div id="quiz-choices" class="quiz-choices"></div>
+        <div id="quiz-controls">
+          <button id="btn-start-quiz" class="btn">Start quiz</button>
+          <button id="btn-next" class="btn hidden">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="tab-profile" class="tab">
+      <div class="section-head">
+        <h2>Profile</h2>
+        <p class="muted">Your streak and progress are stored on this device.</p>
+      </div>
+      <div class="grid">
+        <div class="panel">
+          <h3>Daily streak</h3>
+          <p id="streak-line" class="big"></p>
+        </div>
+        <div class="panel">
+          <h3>Deck summary</h3>
+          <ul id="deck-summary" class="list"></ul>
+        </div>
+        <div class="panel">
+          <h3>Data</h3>
+          <button id="btn-export" class="btn">Export</button>
+          <button id="btn-import" class="btn">Import</button>
+          <input type="file" id="import-file" class="hidden" accept="application/json" />
+          <p class="muted small">Export to back up, import to restore or move devices.</p>
+          <div class="panel">
+  <h3>Deck summary</h3>
+  <ul id="deck-summary" class="list"></ul>
+</div>
+<div class="panel">
+  <h3>Daily Goal</h3>
+  <p class="muted small">Complete at least 20 reviews a day.</p>
+  <progress id="daily-goal" value="0" max="20"></progress>
+  <p id="goal-msg" class="small"></p>
+</div>
+
+<div class="panel">
+  <h3>Word of the Day</h3>
+  <p id="word-of-day" class="big"></p>
+  <p id="word-meaning" class="muted"></p>
+</div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span class="muted small">LingoSpark • Local-only demo • v1.0</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
